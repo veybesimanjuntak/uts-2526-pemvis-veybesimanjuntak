@@ -1,0 +1,242 @@
+// 12S25024 - VEYBE YOULANDA K M SIMANJUNTAK
+// 12S25018 - RIBKA SIANTURI 
+
+faktorial.fprg
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="kalkulator"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 02:55:31 PM"/>
+        <attribute name="created" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjQ3OjQ1IFBNOzIyNTU="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjU1OjMxIFBNOzE7MjM1Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Penjumlahan, Pengurangan, Perkalian, Pembagian" type="Integer" array="False" size=""/>
+            <declare name="Pilihan" type="String" array="False" size=""/>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <input variable="Pilihan"/>
+            <if expression="Pilihan=&quot;1&quot;">
+                <then>
+                    <input variable="a"/>
+                    <input variable="b"/>
+                    <assign variable="Penjumlahan" expression="a + b"/>
+                    <output expression="Penjumlahan" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Pilihan=&quot;2&quot;">
+                        <then>
+                            <input variable="a"/>
+                            <input variable="b"/>
+                            <assign variable="Pengurangan" expression="a - b"/>
+                            <output expression="Pengurangan" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Pilihan=&quot;3&quot;">
+                                <then>
+                                    <input variable="a"/>
+                                    <input variable="b"/>
+                                    <assign variable="Perkalian" expression="a * b"/>
+                                    <output expression="Perkalian" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="Pilihan=&quot;4&quot;">
+                                        <then>
+                                            <input variable="a"/>
+                                            <input variable="b"/>
+                                            <assign variable="Pembagian" expression="a/b"/>
+                                            <output expression="Pembagian" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
+
+fibonacci_sum.fprg
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="fibonacci_sum"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 02:13:31 PM"/>
+        <attribute name="created" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjAyOjIyIFBNOzIyNDE="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjEzOjMxIFBNOzE7MjM1MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, temp, jumlah, n, i" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <assign variable="a" expression="1"/>
+            <assign variable="b" expression="1"/>
+            <assign variable="jumlah" expression="0"/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <assign variable="jumlah" expression="jumlah+a"/>
+                <assign variable="temp" expression="a"/>
+                <assign variable="a" expression="b"/>
+                <assign variable="b" expression="temp+b"/>
+            </for>
+            <output expression="jumlah" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
+
+nilai_analisis.fprg
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="nilai_analisis"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 02:44:47 PM"/>
+        <attribute name="created" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjEzOjM3IFBNOzIyNDk="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjQ0OjQ3IFBNOzE7MjM2Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, mahasiswa" type="Integer" array="False" size=""/>
+            <declare name="nilaiRataRata, nilaiTertinggi, nilaiTerendah, total" type="Real" array="False" size=""/>
+            <declare name="nilaiSiswa" type="Real" array="True" size="4"/>
+            <assign variable="total" expression="0"/>
+            <input variable="mahasiswa"/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <output expression="&quot;Masukkan nilai ke-&quot;&amp;i+1&amp;&quot;:&quot;" newline="True"/>
+                <input variable="nilaiSiswa[i]"/>
+                <assign variable="total" expression="total+nilaiSiswa[i]"/>
+            </for>
+            <assign variable="nilaiRataRata" expression="total/4"/>
+            <assign variable="nilaiTertinggi" expression="nilaiSiswa[0]"/>
+            <for variable="i" start="1" end="3" direction="inc" step="1">
+                <if expression="nilaiSiswa[i]&gt;nilaiTertinggi">
+                    <then>
+                        <assign variable="nilaiTertinggi" expression="nilaiSiswa[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <assign variable="nilaiTerendah" expression="nilaiSiswa[0]"/>
+            <for variable="i" start="1" end="3" direction="inc" step="1">
+                <if expression="nilaiSiswa[i]&lt;nilaiTerendah">
+                    <then>
+                        <assign variable="nilaiTerendah" expression="nilaiSiswa[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;Rata-rata = &quot;&amp;nilaiRataRata" newline="True"/>
+            <output expression="&quot;Tertinggi = &quot;&amp;nilaiTertinggi" newline="True"/>
+            <output expression="&quot;Terendah = &quot;&amp;nilaiTerendah" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
+
+bilangan_prima.fprg
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="bilangan_prima"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 04:55:01 PM"/>
+        <attribute name="created" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjU3OjQyIFBNOzIyNTM="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzA0OjU1OjAxIFBNOzE7MjM1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, x" type="Integer" array="False" size=""/>
+            <output expression="&quot;Masukkan batas bilangan prima&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n&gt;=2">
+                <then>
+                    <output expression="&quot;Bilangan prima dari 2 hingga&quot;&amp;n&amp;&quot;|&quot;" newline="True"/>
+                    <for variable="x" start="2" end="n" direction="inc" step="1">
+                        <if expression="isPrima(x)">
+                            <then>
+                                <output expression="x" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </for>
+                    <output expression="&quot;&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;input lebih besar dari 2&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
+
+kalkulator.fprg
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="kalkulator"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-17 02:55:31 PM"/>
+        <attribute name="created" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjQ3OjQ1IFBNOzIyNTU="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEwLTE3OzAyOjU1OjMxIFBNOzE7MjM1Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Penjumlahan, Pengurangan, Perkalian, Pembagian" type="Integer" array="False" size=""/>
+            <declare name="Pilihan" type="String" array="False" size=""/>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <input variable="Pilihan"/>
+            <if expression="Pilihan=&quot;1&quot;">
+                <then>
+                    <input variable="a"/>
+                    <input variable="b"/>
+                    <assign variable="Penjumlahan" expression="a + b"/>
+                    <output expression="Penjumlahan" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Pilihan=&quot;2&quot;">
+                        <then>
+                            <input variable="a"/>
+                            <input variable="b"/>
+                            <assign variable="Pengurangan" expression="a - b"/>
+                            <output expression="Pengurangan" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Pilihan=&quot;3&quot;">
+                                <then>
+                                    <input variable="a"/>
+                                    <input variable="b"/>
+                                    <assign variable="Perkalian" expression="a * b"/>
+                                    <output expression="Perkalian" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="Pilihan=&quot;4&quot;">
+                                        <then>
+                                            <input variable="a"/>
+                                            <input variable="b"/>
+                                            <assign variable="Pembagian" expression="a/b"/>
+                                            <output expression="Pembagian" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
